@@ -1,4 +1,7 @@
-﻿using System;
+﻿//description
+//https://github.com/TelerikAcademy/CSharp-Part-1/tree/master/Topics/06.%20Loops/homework/07.%20Calculate%203!
+
+using System;
 using System.Numerics;
 
 class Calculate_3_

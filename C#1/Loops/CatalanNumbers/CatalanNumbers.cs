@@ -1,4 +1,7 @@
-﻿using System;
+﻿//description
+//https://github.com/TelerikAcademy/CSharp-Part-1/tree/master/Topics/06.%20Loops/homework/08.%20Catalan%20Numbers
+
+using System;
 using System.Numerics;
 
 class CatalanNumbers
