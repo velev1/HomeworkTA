@@ -22,6 +22,11 @@ class SequenceInMatrix
                 elements[row, col] = crrRow[col];
             }
         }
+
+
+
+
+
         int countEqual = 1;
         int countMax = 0;
 
