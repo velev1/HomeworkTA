@@ -16,19 +16,25 @@ class IntegerCalculations
             {
                 max = Convert.ToInt32(numbers[i]);
             }
-            else if (Convert.ToInt32(numbers[i]) < min)
+            if (Convert.ToInt32(numbers[i]) < min)
             {
                 min = Convert.ToInt32(numbers[i]);
             }
-            product *= Convert.ToInt32(numbers[i]);
+            product *= Convert.ToInt64(numbers[i]);
             sum += Convert.ToInt32(numbers[i]);
         }
         Console.WriteLine(min);
         Console.WriteLine(max);
-
-        decimal avg = (decimal)sum / 5;
+        double avg = 0;
+        if (sum == 0)
+        {
+            avg = 0;
+        }
+        else
+        {
+            avg = sum / 5.0;
+        }
         Console.WriteLine("{0:F2}", avg);
-
         Console.WriteLine(sum);
         Console.WriteLine(product);
     }

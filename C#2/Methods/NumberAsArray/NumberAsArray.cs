@@ -1,80 +1,55 @@
 ﻿using System;
+using System.Linq;
+using System.Collections.Generic;
 
 class NumberAsArray
 {
-    static void SumOfnumbersInArray(string[] firstArray, string[] secondArray)
-    {
-
-
-        if (firstArray.Length >= secondArray.Length)
-        {
-            int[] numbers = new int[firstArray.Length];
-            int rem = 0;
-            for (int i = 0; i < firstArray.Length; i++)
-            {
-                if (i < secondArray.Length)
-                {
-                    numbers[i] = Convert.ToInt32(firstArray[i]) + Convert.ToInt32(secondArray[i]) + rem;
-                }
-                else if (i >= secondArray.Length)
-                {
-                    numbers[i] = Convert.ToInt32(firstArray[i]);
-                }
-               if (numbers[i] > 9)
-                {
-                    numbers[i] = numbers[i] % 10;
-                    rem = 1;
-                }
-                else if (numbers[i] <= 9)
-                {
-                    rem = 0;
-                }
-            }
-            Console.WriteLine(string.Join(" ", numbers));
-            
-        }
-
-        else
-        {
-            int[] numbers = new int[secondArray.Length];
-            int rem = 0;
-            for (int i = 0; i < secondArray.Length; i++)
-            {
-                if (i < firstArray.Length)
-                {
-                    numbers[i] = Convert.ToInt32(firstArray[i]) + Convert.ToInt32(secondArray[i]) + rem;
-                }
-                else if (i >= firstArray.Length)
-                {
-                    numbers[i] = Convert.ToInt32(secondArray[i]);
-                }
-                if (numbers[i] > 9)
-                {
-                    numbers[i] = numbers[i] % 10;
-                    rem = 1;
-                }
-                else if (numbers[i] <= 9)
-                {
-                    rem = 0;
-                }
-            }
-            Console.WriteLine(string.Join(" ", numbers));
-        }
-    }
-
     static void Main()
     {
-        string[] sizes = Console.ReadLine().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-        //size of the first array
-        int n = Convert.ToInt32(sizes[0]);
-        //size of the second array
-        int m = Convert.ToInt32(sizes[1]);
+        string numbersLenght = Console.ReadLine(); //not used in the logic...
 
-        string[] firstArr = Console.ReadLine().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-        string[] secondArr = Console.ReadLine().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+        var firstNumber= Console.ReadLine().Split(' ').Select(int.Parse).ToList();
+        var secondNumber = Console.ReadLine().Split(' ').Select(int.Parse).ToList();
 
-        SumOfnumbersInArray(firstArr, secondArr);
+        var result = new List<int>();
+        int index = 0;
+        int tempSum = 0;
+        int oneMore = 0;
+        while (index <= firstNumber.Count - 1 || index <= secondNumber.Count - 1)
+        {
+            if (index > firstNumber.Count - 1 && index <= secondNumber.Count - 1)
+            {
+                tempSum = secondNumber[index] + oneMore;
+            }
+            else if (index <= firstNumber.Count - 1 && index > secondNumber.Count - 1)
+            {
+                tempSum = firstNumber[index] + oneMore;
+            }
+            else
+            {
+                tempSum = firstNumber[index] + secondNumber[index] + oneMore;
+            }
 
+            if (tempSum > 9)
+            {
+                oneMore = 1;
+                tempSum -= 10;
+            }
+            else
+            {
+                oneMore = 0;
+            }
+            result.Add(tempSum);
+            tempSum = 0;
+            index++;
+        }
+
+        if (oneMore > 0)
+        {
+            result.Add(oneMore);
+        }
+
+        Console.WriteLine(string.Join(" ",result));
     }
 }
 
