@@ -7,27 +7,20 @@ class CorrectBrackets
         string input = Console.ReadLine();
 
         int openBrackets = 0;
-        int closeBrackets = 0;
-        bool correct = true;
 
         for (int i = 0; i < input.Length; i++)
         {
-            if (input[i].ToString() == "(")
+            if (input[i] == '(')
             {
                 openBrackets++;
             }
-            if (input[i].ToString() == ")")
+            else if (input[i] == ')')
             {
-                closeBrackets++;
-            }
-            if (closeBrackets > openBrackets)
-            {
-                correct = false;
-                break;
+                openBrackets--;
             }
         }
 
-        if (openBrackets == closeBrackets)
+        if (openBrackets == 0)
         {
             Console.WriteLine("Correct");
         }
@@ -37,4 +30,5 @@ class CorrectBrackets
         }
     }
 }
+
 
