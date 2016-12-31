@@ -3,7 +3,7 @@
     using System;
     using System.Text;
 
-    public class GenericList<T>
+    public class GenericList<T> where T : IComparable
     {
         private T[] collection;
         private const int initialCapacity = 4;
@@ -36,6 +36,10 @@
             }
         }
 
+        /// <summary>
+        /// add element to the collection
+        /// </summary>
+        /// <param name="value"></param>
         public void Add(T value)
         {
             if (Count == collection.Length)
@@ -50,6 +54,7 @@
                 Count++;
             }
         }
+
         /// <summary>
         /// removing element by index
         /// </summary>
@@ -69,6 +74,7 @@
             }
             Count--;
         }
+
         /// <summary>
         /// inserting element at given position
         /// </summary>
@@ -96,6 +102,7 @@
             collection[index] = value;
 
         }
+
         /// <summary>
         /// Increasing current capacity of the collection by multyply it with 2
         /// </summary>
@@ -110,6 +117,7 @@
             collection = incresedCollection;
             return collection;
         }
+
         /// <summary>
         /// Clear the collection and set the capacity to Initial capacity (4)
         /// </summary>
@@ -119,15 +127,16 @@
             collection = clearedCol;
             Count = 0;
         }
+
         /// <summary>
         /// finding index by its value
         /// </summary>
         /// <param name="value"></param>
         /// <param name="index"></param>
         /// <returns></returns>
-        public int indexOf(T value, int index = 0)
+        public int indexOf(T value, int startIndex = 0)
         {
-            for (int i = index; i < Count; i++)
+            for (int i = startIndex; i < Count; i++)
             {
                 if (collection[i].Equals(value))
                 {
@@ -135,6 +144,54 @@
                 }
             }
             return -1;
+        }
+
+        /// <summary>
+        /// finds the max of collection which is IComparable
+        /// </summary>
+        /// <returns>T max</returns>
+        public T Max() 
+        {
+            if (Count == 0)
+            {
+                throw new ArgumentNullException("There is NO elements in the collection.");
+            }
+            else
+            {
+                T max = collection[0];
+                for (int i = 1; i < Count; i++)
+                {
+                    if (collection[i].CompareTo(max) > 0)
+                    {
+                        max = collection[i];
+                    }
+                }
+                return max;
+            }
+        }
+
+        /// <summary>
+        /// finds the min of collection which is IComparable
+        /// </summary>
+        /// <returns>T min</returns>
+        public T Min()
+        {
+            if (Count == 0)
+            {
+                throw new ArgumentNullException("There is NO elements in the collection.");
+            }
+            else
+            {
+                T min = collection[0];
+                for (int i = 1; i < Count; i++)
+                {
+                    if (collection[i].CompareTo(min) < 0)
+                    {
+                        min = collection[i];
+                    }
+                }
+                return min;
+            }
         }
 
         public override string ToString()

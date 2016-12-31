@@ -5,6 +5,8 @@
 //removing element by index, inserting element at given position, 
 //clearing the list, finding element by its value and ToString().
 //Check all input parameters to avoid accessing elements at invalid positions.
+//Create generic methods Min<T>() and Max<T>() for finding the minimal and maximal element in the GenericList<T>.
+//You may need to add a generic constraints for the type T.
 
 
 namespace GenericClass
@@ -47,10 +49,22 @@ namespace GenericClass
             Console.WriteLine("Capacity = " + col.Capacity);
             Console.WriteLine("Count = " + col.Count);
             Console.WriteLine("Collection: " + col.ToString());
+            Console.WriteLine();
+
 
             //finding index by its value if exist. If do not exist return -1
             col.Add(2);
             col.Add(3);
+            col.Add(-1);
+            col.Add(-99);
+            //print the collection after adding some values
+            Console.WriteLine("Collection: " + col.ToString());
+
+            int max = col.Max();
+            Console.WriteLine("max = " + max);
+            int min = col.Min();
+            Console.WriteLine("min = " + min);
+
 
             int value = 3;
             int index = col.indexOf(value);
@@ -62,7 +76,6 @@ namespace GenericClass
             {
                 Console.WriteLine("The element with value: {0} is not found.",value);
             }
-            Console.WriteLine(col.ToString());
         }
     }
 }
