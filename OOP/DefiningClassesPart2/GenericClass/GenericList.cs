@@ -28,10 +28,18 @@
         {
             get
             {
+                if (index < 0 || index >= Count)
+                {
+                    throw new IndexOutOfRangeException("index is outside the GenericList");
+                }
                 return collection[index];
             }
             set
             {
+                if (index < 0 || index >= Count)
+                {
+                    throw new IndexOutOfRangeException("index is outside the GenericList");
+                }
                 collection[index] = value;
             }
         }
@@ -150,7 +158,7 @@
         /// finds the max of collection which is IComparable
         /// </summary>
         /// <returns>T max</returns>
-        public T Max() 
+        public T Max()
         {
             if (Count == 0)
             {
