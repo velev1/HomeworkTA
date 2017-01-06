@@ -5,6 +5,12 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringBuilder.Substring", "StringBuilder.Substring\StringBuilder.Substring.csproj", "{1891CFD8-5BE8-4E9B-8126-D459B0A30FD6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Students", "Students\Students.csproj", "{CB72DA14-A427-4016-96CE-1D4A515A15F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Divisible by 7 and 3", "Divisible by 7 and 3\Divisible by 7 and 3.csproj", "{CDEC97FF-E243-42C5-9A36-FCF577FFFA56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timer_Events", "Timer_Events\Timer_Events.csproj", "{FD880EE9-833C-4A10-8E9D-F8B04A3AF576}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{1891CFD8-5BE8-4E9B-8126-D459B0A30FD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1891CFD8-5BE8-4E9B-8126-D459B0A30FD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1891CFD8-5BE8-4E9B-8126-D459B0A30FD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB72DA14-A427-4016-96CE-1D4A515A15F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB72DA14-A427-4016-96CE-1D4A515A15F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB72DA14-A427-4016-96CE-1D4A515A15F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB72DA14-A427-4016-96CE-1D4A515A15F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDEC97FF-E243-42C5-9A36-FCF577FFFA56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDEC97FF-E243-42C5-9A36-FCF577FFFA56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDEC97FF-E243-42C5-9A36-FCF577FFFA56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDEC97FF-E243-42C5-9A36-FCF577FFFA56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD880EE9-833C-4A10-8E9D-F8B04A3AF576}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD880EE9-833C-4A10-8E9D-F8B04A3AF576}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD880EE9-833C-4A10-8E9D-F8B04A3AF576}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD880EE9-833C-4A10-8E9D-F8B04A3AF576}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
