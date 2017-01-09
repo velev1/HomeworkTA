@@ -1,18 +1,17 @@
-﻿using System;
-
-namespace Shapes
+﻿namespace Shapes
 {
     public class Triangle : Shape
     {
-        public Triangle(double side, double height)
+        public Triangle(double width, double height)
+            :base(width)
         {
-            this.Width = side;
-            this.Height = height;
+            this.Hieght = height;
         }
 
         public override double CalculateSurface()
         {
-            return (Width * Height) / 2;
+            double surface = (Hieght * Width) / 2;
+            return surface;
         }
     }
 }

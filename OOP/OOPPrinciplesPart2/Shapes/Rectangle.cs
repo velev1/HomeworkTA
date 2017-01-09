@@ -1,19 +1,18 @@
-﻿using System;
-
-namespace Shapes
+﻿namespace Shapes
 {
     public class Rectangle : Shape
     {
 
         public Rectangle(double width, double height)
+            :base(width)
         {
-            this.Width = width;
-            this.Height = height;
+            this.Hieght = height;
         }
 
         public override double CalculateSurface()
         {
-            return Width * Height;
+            double surface = Width * Hieght;
+            return surface;
         }
     }
 }

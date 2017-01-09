@@ -5,7 +5,14 @@
     public abstract class Shape
     {
         private double width;
+
         private double height;
+
+
+        public Shape(double width)
+        {
+            this.Width = width;
+        }
 
         public double Width
         {
@@ -13,33 +20,36 @@
             {
                 return this.width;
             }
-            set
+            private set
             {
-                this.width = value;
-                if (this.width < 0)
+                if (value <= 0)
                 {
-                    throw new ArgumentException("The parameters must be positive numbers !");
+                    throw new ArgumentException("The size of the side must be greater than zero.");
                 }
+
+                this.width = value;
             }
+
         }
 
-        public double Height
+        public double Hieght
         {
             get
             {
                 return this.height;
             }
-            set
+
+            protected set
             {
-                this.height = value;
-                if (this.height < 0)
+                if (value <= 0)
                 {
-                    throw new ArgumentException("The parameters must be positive numbers !");
+                    throw new ArgumentException("The size of the side must be greater than zero.");
                 }
 
-                    
+                this.height = value;
             }
         }
+
 
         public abstract double CalculateSurface();
     }

@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shapes", "Shapes\Shapes.csproj", "{9B3E4E1F-FC34-43A6-A453-E7CC5840A438}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shapes", "Shapes\Shapes.csproj", "{F22B7926-224C-4B27-9896-FAF093DA6596}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankAccounts", "BankAccounts\BankAccounts.csproj", "{F988B38F-69E7-4F8D-A7C9-7841284A29C6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank accounts", "Bank accounts\Bank accounts.csproj", "{286DDBE2-3C3F-44D9-9173-2282194C6408}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9B3E4E1F-FC34-43A6-A453-E7CC5840A438}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9B3E4E1F-FC34-43A6-A453-E7CC5840A438}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9B3E4E1F-FC34-43A6-A453-E7CC5840A438}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9B3E4E1F-FC34-43A6-A453-E7CC5840A438}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F988B38F-69E7-4F8D-A7C9-7841284A29C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F988B38F-69E7-4F8D-A7C9-7841284A29C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F988B38F-69E7-4F8D-A7C9-7841284A29C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F988B38F-69E7-4F8D-A7C9-7841284A29C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F22B7926-224C-4B27-9896-FAF093DA6596}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F22B7926-224C-4B27-9896-FAF093DA6596}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F22B7926-224C-4B27-9896-FAF093DA6596}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F22B7926-224C-4B27-9896-FAF093DA6596}.Release|Any CPU.Build.0 = Release|Any CPU
+		{286DDBE2-3C3F-44D9-9173-2282194C6408}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{286DDBE2-3C3F-44D9-9173-2282194C6408}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{286DDBE2-3C3F-44D9-9173-2282194C6408}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{286DDBE2-3C3F-44D9-9173-2282194C6408}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

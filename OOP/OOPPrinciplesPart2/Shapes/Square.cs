@@ -1,18 +1,17 @@
-﻿using System;
-
-namespace Shapes
+﻿namespace Shapes
 {
     public class Square : Shape
     {
         public Square(double side)
+            :base(side)
         {
-            this.Width = side;
-            this.Height = side;
+
         }
 
         public override double CalculateSurface()
         {
-            return Width * Height;
+            double surface = Width * Width;
+            return surface;
         }
     }
 }
