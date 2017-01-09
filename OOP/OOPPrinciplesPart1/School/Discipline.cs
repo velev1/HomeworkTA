@@ -1,97 +1,54 @@
-﻿
-namespace School
+﻿namespace School
 {
     using System;
-    using System.Collections.Generic;
     using System.Text;
 
-    public class Discipline : ICommentBox
+    public class Discipline : IComment
     {
-        // fields
-        private string name;
-        private int lectionsCount;
-        private int exercisesCount;
+        private string comment;
 
-        // constructor
-        public Discipline(string name, int lections, int exerxises)
+        public Discipline(string name, int numOfLectures, int numOfEx, string comment = "")
         {
             this.Name = name;
-            this.LectionsCount = lections;
-            this.ExercisesCount = exerxises;
+            this.NumberOfLectures = numOfLectures;
+            this.NumberOfExercises = numOfEx;
+            this.Comment = comment;
         }
 
-        // properties
-        public string Name
+        public string Name { get; private set; }
+        public int NumberOfLectures { get; private set; }
+        public int NumberOfExercises { get; private set; }
+
+        public string Comment
         {
             get
             {
-                return this.name;
+                return this.comment;
             }
 
             set
             {
-                if (value.Length < 2)
-                {
-                    throw new ArgumentException("The discipline name can not be less than two symbols");
-                }
-
-                this.name = value;
+                this.comment = value;
             }
         }
 
-        public int LectionsCount
-        {
-            get
-            {
-                return this.lectionsCount;
-            }
-
-            set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentException("The discipline;s lections count can not be negative number");
-                }
-
-                this.lectionsCount = value;
-            }
-        }
-
-        public int ExercisesCount
-        {
-            get
-            {
-                return this.exercisesCount;
-            }
-
-            set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentException("The discipline's exercises count can not be negative number");
-                }
-
-                this.exercisesCount = value;
-            }
-        }
-
-        public List<string> FreeTextBox { get; private set; }
-
-        // methods
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder str = new StringBuilder();
+            if (Comment != "")
+            {
+                str.Append(string.Format(" (discipline:{0} Lectures:{1} Exercises:{2} comment:{3})"
+                    , Name, NumberOfLectures, NumberOfExercises,Comment));
+            }
+            else
+            {
+                str.Append(string.Format(" (discipline:{0} Lectures:{1} Exercises:{2})"
+                    , Name, NumberOfLectures, NumberOfExercises));
 
-            sb.AppendLine(string.Format("Name : {0}", this.Name));
-            sb.AppendLine(string.Format("Lections : {0}", this.lectionsCount));
-            sb.AppendLine(string.Format("Exerxises : {0}", this.exercisesCount));
+            }
 
-            return sb.ToString();
+            return str.ToString();
         }
 
-        public void AddFreeTextMessage(string text)
-        {
-            this.FreeTextBox.Add(text);
-        }
     }
 }

@@ -1,70 +1,59 @@
 ﻿
 namespace School
 {
-    using System;
-    using System.Collections.Generic;
     using System.Text;
-    using System.Linq;
 
     public class Student : Person
     {
 
-        private static IEnumerable<string> usedNums = new HashSet<string>();
+        private static int nextId = 0;
+        private int id;
+        private string comment;
 
-        // fields
-        private int classNumber;
-        private string testNumber;
-
-        // constructors
-        public Student(string firstName, string lastName, string testnumbet)
+        public Student(string name, string comment ="")
+            :base(name)
         {
-            this.FirstName = firstName;
-            this.LastName = lastName;
-            this.ClassNumber = StudentID.NextID();
-            this.FreeTextBox = new List<string>();
-            this.TestNumber = testnumbet;
+            this.id = ++nextId;
+            this.Comment = comment;
         }
 
-        public string TestNumber
+        public override string Comment
         {
             get
             {
-                return this.testNumber;
+                return this.comment;
             }
 
-            private set
+            set
             {
-                if (usedNums.Contains(value))
-                {
-                    throw new ArgumentException("TestID already exist");
-                }
-
-                this.testNumber = value;
-                //usedNums.Add(value);
+                this.comment = value;
             }
         }
-        public int ClassNumber
+
+        public int Id
         {
             get
             {
-                return this.classNumber;
+                return this.id;
             }
-
             private set
             {
-                this.classNumber = value;
+                this.id = value;
             }
         }
 
-        // methods
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder str = new StringBuilder();
+            str.Append(Name + " ");
+            str.Append("Id=" + Id);
+            if (Comment !="")
+            {
+                str.Append(string.Format(" - comment: {0}", Comment));
+            }
 
-            sb.AppendLine(string.Format("Name : {0}", this.FullName));
-            sb.AppendLine(string.Format("Class number : {0}", this.classNumber));
-
-            return sb.ToString();
+            return str.ToString(); 
         }
+
     }
 }

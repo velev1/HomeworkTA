@@ -1,110 +1,86 @@
-﻿
-namespace School
+﻿namespace School
 {
-    using System;
-    using System.Collections.Generic;
     using System.Text;
+    using System.Collections.Generic;
 
-    public class Class : ICommentBox
+    using Enums;
+
+    public class Class : IComment
     {
-        // fields
-        private List<Student> classStudents;
-        private List<Teacher> classTeachers;
-        private string identifier;
+        private List<Student> students;
+        private List<Teacher> teachers;
+        private string comment;
+        private Classes klas;
 
-        // constructors
-        public Class(string id)
+        public Class(List<Student> students, List<Teacher> teachers, Classes klas, string comment = "")
         {
-            this.ClassStudents = new List<Student>();
-            this.ClassTeachers = new List<Teacher>();
-            this.Identifier = id;
+            this.Students = students;
+            this.Teachers = teachers;
+            this.Klas = klas;
+            this.Comment = comment;
         }
 
-        public Class(string id, List<Student> students, List<Teacher> teachers)
-           : this(id)
-        {
-            this.ClassStudents = new List<Student>(students);
-            this.ClassTeachers = new List<Teacher>(teachers);
-        }
-
-        // properties
-        public List<Student> ClassStudents
+        public List<Student> Students
         {
             get
             {
-                return this.classStudents;
+                return this.students;
             }
-
-            set
+            private set
             {
-                this.classStudents = value;
+                this.students = value;
             }
         }
 
-        public List<Teacher> ClassTeachers
+        public List<Teacher> Teachers
         {
             get
             {
-                return this.classTeachers;
+                return this.teachers;
             }
-
-            set
+            private set
             {
-                this.classTeachers = value;
+                this.teachers = value;
             }
         }
 
-        public string Identifier
+        public string Comment
         {
             get
             {
-                return this.identifier;
+                return this.comment;
             }
-
             set
             {
-                if (ClassesID.CheckID(value))
-                {
-                    throw new ArgumentException("This identifier is already in use");
-                }
-                else if (string.IsNullOrEmpty(value))
-                {
-                    throw new ArgumentException("The identifier can not be empty");
-                }
-                else
-                {
-                    this.identifier = value;
-                }
+                this.comment = value;
             }
         }
 
-        public List<string> FreeTextBox { get; private set; }
-
-        // methods
-        public void AddFreeTextMessage(string text)
+        public Classes Klas
         {
-            this.FreeTextBox.Add(text);
-        }
-
-        public void AddTeacher(Teacher newTeacher)
-        {
-            this.classTeachers.Add(newTeacher);
-        }
-
-        public void AddStudent(Student newStuden)
-        {
-            this.ClassStudents.Add(newStuden);
+            get
+            {
+                return this.klas;
+            }
+            private set
+            {
+                this.klas = value;
+            }
         }
 
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder str = new StringBuilder();
+            str.Append(string.Format("This is klas: {0}\n", Klas));
 
-            sb.AppendLine(string.Format("Class identifier : {0}", this.Identifier));
-            sb.AppendLine(string.Format("Teachers : \n{0}", string.Join("\n", this.classTeachers)));
-            sb.AppendLine(string.Format("Students : \n{0}", string.Join("\n", this.classStudents)));
+            if (Comment != "")
+            {
+                str.Append(string.Format("Comment: {0}\n", Comment));
+            }
+            str.Append(string.Format("Students: {0}\n", string.Join(", ", Students)));
+            str.Append(string.Format("Teachers: {0}\n", string.Join(", ", Teachers)));
 
-            return sb.ToString();
+            return str.ToString();
         }
     }
 }

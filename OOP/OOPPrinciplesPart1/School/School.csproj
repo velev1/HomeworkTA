@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BC81CAD9-8B49-4450-98B2-A2C7D445A0C6}</ProjectGuid>
+    <ProjectGuid>{74F2AE46-8FF2-417A-B40E-633A2D9DF40B}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>School</RootNamespace>
@@ -44,18 +44,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class.cs" />
-    <Compile Include="ClassesID.cs" />
     <Compile Include="Discipline.cs" />
-    <Compile Include="ICommentBox.cs" />
+    <Compile Include="Enums\Classes.cs" />
+    <Compile Include="IComment.cs" />
     <Compile Include="Person.cs" />
-    <Compile Include="SchoolMain.cs" />
+    <Compile Include="Start.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Student.cs" />
-    <Compile Include="StudentID.cs" />
     <Compile Include="Teacher.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="MyClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

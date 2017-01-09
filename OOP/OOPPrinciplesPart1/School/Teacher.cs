@@ -1,63 +1,46 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace School
+﻿namespace School
 {
-    using System;
-    using System.Collections.Generic;
     using System.Text;
 
     public class Teacher : Person
     {
-        // fields
-        private List<Discipline> teachersDisciplines;
+        private string comment;
 
-        // constructors
-        public Teacher(string firstName, string lastName)
+        public Teacher(string name, Discipline discipline ,string comment = "")
+            :base(name)
         {
-            this.FirstName = firstName;
-            this.LastName = lastName;
-            this.TeachersDisciplines = new List<Discipline>();
-            this.FreeTextBox = new List<string>();
+            this.Comment = comment;
+            this.Disc = discipline;
         }
 
-        public Teacher(string firstName, string lastName, List<Discipline> disciplines)
-            : this(firstName, lastName)
-        {
-            this.TeachersDisciplines = disciplines;
-        }
+        public Discipline Disc { get; private set; }
 
-        // properties
-        public List<Discipline> TeachersDisciplines
+        public override string Comment
         {
             get
             {
-                return this.teachersDisciplines;
+                return this.comment;
             }
 
-            private set
+            set
             {
-                this.teachersDisciplines = value;
+                this.comment = value;
             }
         }
 
-        // methods
-        public void AddDiscipline(Discipline dsc)
-        {
-            this.teachersDisciplines.Add(dsc);
-        }
 
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder str = new StringBuilder();
+            
+            str.Append(Name);
+            str.Append(Disc);
+            if (Comment != "")
+            {
+                str.Append(string.Format(" - comment: {0}", Comment));
+            }
 
-            sb.AppendLine(string.Format("Name : {0}", this.FullName));
-            sb.AppendLine(string.Format("Disciplines : \n{0}", string.Join("\n", this.teachersDisciplines)));
-
-            return sb.ToString();
+            return str.ToString();
         }
     }
 }
