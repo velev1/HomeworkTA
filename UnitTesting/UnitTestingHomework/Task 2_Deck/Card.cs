@@ -2,7 +2,7 @@
 {
     using Task_2_Deck.Enums;
 
-    public class Card
+    public class Card 
     {
         public static Card GetCard(CardSuit cardSuit, CardType cardType)
         {

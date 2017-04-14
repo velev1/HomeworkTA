@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E2BA61F8-0339-4294-AC16-79A56EC6AFC8}</ProjectGuid>
+    <ProjectGuid>{FA1FC6A3-C844-42DD-A8C2-21E4E611C759}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Task_2_Deck</RootNamespace>
-    <AssemblyName>Task 2_Deck</AssemblyName>
+    <RootNamespace>FormatEvents</RootNamespace>
+    <AssemblyName>FormatEvents</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PowerCollections, Version=1.0.2141.24679, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\XAct.Wintellect.PowerCollections.0.0.1\lib\net20\PowerCollections.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,18 +47,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Card.cs" />
-    <Compile Include="CardDealer.cs" />
-    <Compile Include="Contracts\IDeck.cs" />
-    <Compile Include="Deck.cs" />
-    <Compile Include="Enums\CardSuit.cs" />
-    <Compile Include="Enums\CardType.cs" />
-    <Compile Include="ICard.cs" />
-    <Compile Include="Startup.cs" />
+    <Compile Include="Event.cs" />
+    <Compile Include="EventHolder.cs" />
+    <Compile Include="Messages.cs" />
+    <Compile Include="StartUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
