@@ -1,0 +1,2 @@
+﻿The Bottleneck is in the class OrbitCalculator
+method EarthRotation line 94 -> the loop is unnecessary
