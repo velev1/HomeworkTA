@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F8E1B76C-94D7-4E93-AC7C-4ADEDC6449B7}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BattleManager</RootNamespace>
+    <AssemblyName>BattleManager</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\AirCrafts\F117.cs" />
+    <Compile Include="Models\AirCrafts\SecretAirCraft.cs" />
+    <Compile Include="Models\Contracts\IAirplane.cs" />
+    <Compile Include="Models\Contracts\IArmy.cs" />
+    <Compile Include="Models\Contracts\IKiborg.cs" />
+    <Compile Include="Models\Contracts\IPilot.cs" />
+    <Compile Include="Models\Contracts\ISecretAirplane.cs" />
+    <Compile Include="Models\Contracts\IUnit.cs" />
+    <Compile Include="Models\Units\Pilot.cs" />
+    <Compile Include="Models\Weapons\AK47.cs" />
+    <Compile Include="Models\Army.cs" />
+    <Compile Include="Models\Contracts\ICombatUnit.cs" />
+    <Compile Include="Models\Contracts\IHuman.cs" />
+    <Compile Include="Models\Contracts\IRobot.cs" />
+    <Compile Include="Models\Contracts\ISoldier.cs" />
+    <Compile Include="Models\Contracts\IWeapon.cs" />
+    <Compile Include="Models\Units\Human.cs" />
+    <Compile Include="Models\Units\Kiborg.cs" />
+    <Compile Include="Models\Weapons\Laser.cs" />
+    <Compile Include="Models\Units\Robot.cs" />
+    <Compile Include="Models\Units\Soldiеr.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
